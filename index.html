@@ -349,19 +349,19 @@
 </blockquote>
 <h2 id="谷歌激励视频"><a href="#谷歌激励视频" class="headerlink" title="谷歌激励视频"></a>谷歌激励视频</h2><ul>
 <li>谷歌视频因为在国内谷歌服务不给力，选用谷歌视频时需要考虑下加载视频的成功率。</li>
-<li><a href="https://firebase.google.com/docs/admob/ios/rewarded-video?hl=zh-cn" target="_blank" rel="external">谷歌激励视频文档</a><h3 id="1-集成SDK"><a href="#1-集成SDK" class="headerlink" title="1 . 集成SDK"></a>1 . 集成SDK</h3></li>
+<li><a href="https://firebase.google.com/docs/admob/ios/rewarded-video?hl=zh-cn" target="_blank" rel="external">谷歌激励视频文档</a><h3 id="集成SDK"><a href="#集成SDK" class="headerlink" title="集成SDK"></a>集成SDK</h3></li>
 <li>按照文档pod即可</li>
-<li>需要在谷歌后台绑定到Firebase上，在Firebase的后台配置下载一个GoogleService-Info.plist的文件拖到工程中<h3 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2 . 初始化"></a>2 . 初始化</h3></li>
+<li>需要在谷歌后台绑定到Firebase上，在Firebase的后台配置下载一个GoogleService-Info.plist的文件拖到工程中<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3></li>
 <li>这里官方文档建议在<code>didFinishLaunchingWithOptions</code>方法里执行，<strong>但是，如果你集成了阿里的百川SDK或者百度的广告SDK，有可能冲突，会在真机上造成卡死，试过几种方法无解后，我就把它移到需要的页面执行了。</strong><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[FIRApp configure];</div><div class="line">[GADMobileAds configureWithApplicationID:<span class="string">@"注册的appid"</span>];</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="3-预加载视频"><a href="#3-预加载视频" class="headerlink" title="3 . 预加载视频"></a>3 . 预加载视频</h3><ul>
+<h3 id="预加载视频"><a href="#预加载视频" class="headerlink" title="预加载视频"></a>预加载视频</h3><ul>
 <li>正常网络环境下，8S即可播放<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GADRequest *request = [GADRequest request];</div><div class="line">[[GADRewardBasedVideoAd sharedInstance] loadRequest:request withAdUnitID:<span class="string">@"ca-app-pub-3940256099942544/1712485313"</span>];</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="4-播放视频"><a href="#4-播放视频" class="headerlink" title="4 . 播放视频"></a>4 . 播放视频</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:<span class="keyword">self</span>];</div></pre></td></tr></table></figure>
+<h3 id="播放视频"><a href="#播放视频" class="headerlink" title="播放视频"></a>播放视频</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:<span class="keyword">self</span>];</div></pre></td></tr></table></figure>
 <ul>
-<li>可以通过<code>[[GADRewardBasedVideoAd sharedInstance] isReady]</code>来判断视频是否已经准备好。<h3 id="5-视频代理方法"><a href="#5-视频代理方法" class="headerlink" title="5 . 视频代理方法"></a>5 . 视频代理方法</h3>这里就只介绍几个常用到的</li>
+<li>可以通过<code>[[GADRewardBasedVideoAd sharedInstance] isReady]</code>来判断视频是否已经准备好。<h3 id="视频代理方法"><a href="#视频代理方法" class="headerlink" title="视频代理方法"></a>视频代理方法</h3>这里就只介绍几个常用到的</li>
 <li>视频预加载完毕，可以播放的回调</li>
 <li><p>经过测试，因为谷歌服务在国内并不流程，所以即使这个方法回调表示可以播放了，播放时仍有几率无法播放，直接跳到最后的播放完毕的画面。</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -379,7 +379,7 @@
 <li>我测试时除了超时错误外，还有一种错误<code>Error Domain=com.google.ads Code=1 &quot;Request Error: No ad to show.&quot; UserInfo={NSLocalizedDescription=Request Error: No ad to show., NSLocalizedFailureReason=Request Error: No ad to show.</code>，查阅了一些资料，至今没有了解这个错误是怎样造成的。如果有大佬知道的，请告诉我。<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd</div><div class="line">didFailToLoadWithError:(<span class="built_in">NSError</span> *)error &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="6-实现连续播放"><a href="#6-实现连续播放" class="headerlink" title="6 . 实现连续播放"></a>6 . 实现连续播放</h3><ul>
+<h3 id="实现连续播放"><a href="#实现连续播放" class="headerlink" title="实现连续播放"></a>实现连续播放</h3><ul>
 <li>实现思路，创建两个<code>GADRewardBasedVideoAd</code>实例，在一个进行播放时，另一个进行缓存。</li>
 <li><code>GADRewardBasedVideoAd *ad = [[GADRewardBasedVideoAd alloc] init];</code></li>
 <li><code>[GADRewardBasedVideoAd sharedInstance]</code></li>
@@ -393,15 +393,15 @@
 <h2 id="Vungle激励视频"><a href="#Vungle激励视频" class="headerlink" title="Vungle激励视频"></a>Vungle激励视频</h2><ul>
 <li>Vungle激励视频在国内也可以正常访问，测试时没有失败过，比谷歌的成功率高很多。</li>
 <li>Vungle实现和谷歌差不多。这里就不着重介绍了。</li>
-<li><a href="https://support.vungle.com/hc/en-us/articles/115000477452" target="_blank" rel="external">Vungle激励视频文档</a><h2 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1 . 初始化"></a>1 . 初始化</h2></li>
+<li><a href="https://support.vungle.com/hc/en-us/articles/115000477452" target="_blank" rel="external">Vungle激励视频文档</a><h3 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h3></li>
 <li>目前为止，VungleSDK集成后没有发生冲突。<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[VungleSDK sharedSDK] startWithAppId:<span class="string">@"appID"</span> placements:@[<span class="string">@"广告位"</span>] error:<span class="literal">nil</span>]</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="2-预加载视频"><a href="#2-预加载视频" class="headerlink" title="2 . 预加载视频"></a>2 . 预加载视频</h2><ul>
+<h3 id="预加载视频-1"><a href="#预加载视频-1" class="headerlink" title="预加载视频"></a>预加载视频</h3><ul>
 <li>正常网络环境下，大概6S即可播放<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[VungleSDK sharedSDK] loadPlacementWithID:kVungleTestPlacementID02 error:<span class="literal">nil</span>];</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="3-播放视频"><a href="#3-播放视频" class="headerlink" title="3 . 播放视频"></a>3 . 播放视频</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([[VungleSDK sharedSDK] isAdCachedForPlacementID:广告位ID]) &#123;</div><div class="line">[[VungleSDK sharedSDK] playAd:<span class="keyword">self</span> options:<span class="literal">nil</span> placementID:kVungleTestPlacementID02 error:<span class="literal">nil</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="播放视频-1"><a href="#播放视频-1" class="headerlink" title="播放视频"></a>播放视频</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([[VungleSDK sharedSDK] isAdCachedForPlacementID:广告位ID]) &#123;</div><div class="line">[[VungleSDK sharedSDK] playAd:<span class="keyword">self</span> options:<span class="literal">nil</span> placementID:kVungleTestPlacementID02 error:<span class="literal">nil</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>关于更深入的定制，这里因为业务需要并没有进行深入设置，如果有时间，以后会补上。</p>
 
           

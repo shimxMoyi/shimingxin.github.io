@@ -105,7 +105,7 @@
 谷歌激励视频文档集成SDK
 按照文档pod即可
 需要在谷歌后台绑定到Firebase上，在Firebase的后台配置下载一个GoogleService-Info.">
-<meta property="og:updated_time" content="2017-08-01T10:07:04.000Z">
+<meta property="og:updated_time" content="2017-08-01T10:09:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS集成激励视频">
 <meta name="twitter:description" content="因为业务需求，要在app里集成激励视频，类似游戏app内的观看视频奖励钻石的。本文就介绍了两种激励视频，谷歌激励视频和Vungle激励视频。
@@ -374,9 +374,12 @@
 <li>正常网络环境下，8S即可播放<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GADRequest *request = [GADRequest request];</div><div class="line">[[GADRewardBasedVideoAd sharedInstance] loadRequest:request withAdUnitID:<span class="string">@"ca-app-pub-3940256099942544/1712485313"</span>];</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="播放视频"><a href="#播放视频" class="headerlink" title="播放视频"></a>播放视频</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:<span class="keyword">self</span>];</div></pre></td></tr></table></figure>
+<h3 id="播放视频"><a href="#播放视频" class="headerlink" title="播放视频"></a>播放视频</h3><ul>
+<li>可以通过<code>[[GADRewardBasedVideoAd sharedInstance] isReady]</code>来判断视频是否已经准备好。<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:<span class="keyword">self</span>];</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="视频代理方法"><a href="#视频代理方法" class="headerlink" title="视频代理方法"></a>视频代理方法</h3><p>这里就只介绍几个常用到的</p>
 <ul>
-<li>可以通过<code>[[GADRewardBasedVideoAd sharedInstance] isReady]</code>来判断视频是否已经准备好。<h3 id="视频代理方法"><a href="#视频代理方法" class="headerlink" title="视频代理方法"></a>视频代理方法</h3>这里就只介绍几个常用到的</li>
 <li>视频预加载完毕，可以播放的回调</li>
 <li><p>经过测试，因为谷歌服务在国内并不流程，所以即使这个方法回调表示可以播放了，播放时仍有几率无法播放，直接跳到最后的播放完毕的画面。</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

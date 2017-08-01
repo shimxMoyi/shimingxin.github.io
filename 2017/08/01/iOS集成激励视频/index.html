@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -87,12 +87,34 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="子书不言">
-<meta property="og:url" content="http://smxNote.com/child/index.html">
+<meta name="description" content="因为业务需求，要在app里集成激励视频，类似游戏app内的观看视频奖励钻石的。本文就介绍了两种激励视频，谷歌激励视频和Vungle激励视频。
+
+谷歌激励视频
+谷歌视频因为在国内谷歌服务不给力，选用谷歌视频时需要考虑下加载视频的成功率。
+谷歌激励视频文档1 . 集成SDK
+按照文档pod即可
+需要在谷歌后台绑定到Firebase上，在Firebase的后台配置下载一个GoogleService-I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS集成激励视频">
+<meta property="og:url" content="http://smxNote.com/child/2017/08/01/iOS集成激励视频/index.html">
 <meta property="og:site_name" content="子书不言">
+<meta property="og:description" content="因为业务需求，要在app里集成激励视频，类似游戏app内的观看视频奖励钻石的。本文就介绍了两种激励视频，谷歌激励视频和Vungle激励视频。
+
+谷歌激励视频
+谷歌视频因为在国内谷歌服务不给力，选用谷歌视频时需要考虑下加载视频的成功率。
+谷歌激励视频文档1 . 集成SDK
+按照文档pod即可
+需要在谷歌后台绑定到Firebase上，在Firebase的后台配置下载一个GoogleService-I">
+<meta property="og:updated_time" content="2017-08-01T10:00:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="子书不言">
+<meta name="twitter:title" content="iOS集成激励视频">
+<meta name="twitter:description" content="因为业务需求，要在app里集成激励视频，类似游戏app内的观看视频奖励钻石的。本文就介绍了两种激励视频，谷歌激励视频和Vungle激励视频。
+
+谷歌激励视频
+谷歌视频因为在国内谷歌服务不给力，选用谷歌视频时需要考虑下加载视频的成功率。
+谷歌激励视频文档1 . 集成SDK
+按照文档pod即可
+需要在谷歌后台绑定到Firebase上，在Firebase的后台配置下载一个GoogleService-I">
 
 
 
@@ -120,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://smxNote.com/child/"/>
+  <link rel="canonical" href="http://smxNote.com/child/2017/08/01/iOS集成激励视频/"/>
 
 
 
 
 
-  <title> 子书不言 </title>
+  <title> iOS集成激励视频 | 子书不言 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -151,9 +173,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,9 +266,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -278,10 +298,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/08/01/iOS集成激励视频/" itemprop="url">
-                  iOS集成激励视频
-                </a>
+                iOS集成激励视频
               
             
           </h1>
@@ -342,9 +359,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>因为业务需求，要在app里集成激励视频，类似游戏app内的观看视频奖励钻石的。本文就介绍了两种激励视频，谷歌激励视频和Vungle激励视频。</p>
 </blockquote>
 <h2 id="谷歌激励视频"><a href="#谷歌激励视频" class="headerlink" title="谷歌激励视频"></a>谷歌激励视频</h2><ul>
@@ -404,341 +419,66 @@
 <h2 id="3-播放视频"><a href="#3-播放视频" class="headerlink" title="3 . 播放视频"></a>3 . 播放视频</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([[VungleSDK sharedSDK] isAdCachedForPlacementID:广告位ID]) &#123;</div><div class="line">[[VungleSDK sharedSDK] playAd:<span class="keyword">self</span> options:<span class="literal">nil</span> placementID:kVungleTestPlacementID02 error:<span class="literal">nil</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>关于更深入的定制，这里因为业务需要并没有进行深入设置，如果有时间，以后会补上。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://smxNote.com/child/2016/11/13/https适配及抓包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="子书不言">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="子书不言">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/13/https适配及抓包/" itemprop="url">
-                  iOS的https适配及抓包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-13T14:11:30+08:00">
-                2016-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/13/https适配及抓包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/13/https适配及抓包/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <h2 id="关于苹果的碎碎念"><a href="#关于苹果的碎碎念" class="headerlink" title="关于苹果的碎碎念"></a>关于苹果的碎碎念</h2><blockquote>
-<p>苹果在 WWDC 2016 上宣布：2016 年底将要求所有 APP 适配苹果的 App Transport Security，简单的来说就是app上的所有明文请求都需要由http请求变成https 请求，如果没有适配且没有进行必要的说明，那么就会审核不通过。不过，就在前不久苹果怂了（我猜的！），将这个deadline无限期推迟，我能说什么呢，当然是好开心！</p>
-</blockquote>
-<p>##适配https<br>言归正传，关于什么是https，https的原理啥的网上资料很多，在这里我就不多重复了，有兴趣的可以去查阅相关资料。下面就来说说我在适配时遇到的一些问题。</p>
-<h3 id="1-证书相关"><a href="#1-证书相关" class="headerlink" title="1 . 证书相关"></a>1 . 证书相关</h3><p>适配https，首先我们需要的就是证书。那么如何拿到证书，一种是让后台大哥要，或者你懒得要那么也可以自己去下一个，以<code>百度</code>为例，用Safari打开<code>https://www.baidu.com</code><br><img src="http://upload-images.jianshu.io/upload_images/888877-4765e6586fc9f87d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="百度网址"><br>点击那个小锁，打开显示证书，将baidu.com这个证书拖到桌面就可以获得证书了。同理将百度换成你们app的域名就可以了。<br><img src="http://upload-images.jianshu.io/upload_images/888877-50e9d078fc7de9fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="证书详细"><br>那么获得了证书，然后呢，直接拖进工程吗？不，首先我们要确认一下，这个证书是什么类型的证书，证书目前分三种：</p>
-<ul>
-<li>自建证书</li>
-<li>免费证书</li>
-<li>收费证书</li>
-</ul>
-<p>自建证书不在苹果的信任列表里，需要拖进工程进行双向认证，而剩下两种都是由第三方机构颁发的，都属于苹果的信任列表里，是不需要拖进工程里的。注意：<code>苹果将沃通和StartCom的根证书列为不信任</code><br><img src="http://upload-images.jianshu.io/upload_images/888877-bfba8bba209473de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="苹果不再信任沃通和StartCom证书"></p>
-<p>如果有同学发现自己的证书在ios9上可以用，在ios10上不可以用时，那么你就要看看你的证书的根证书是什么了，建议就是换一家证书颁发机构，免费的阿里云，腾讯云等都可以。<br>如何验证证书是否可行，用nscurl命令就可以了，全部pass就表示没问题<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nscurl --ats-diagnostics --verbose https:<span class="comment">//example.com</span></div></pre></td></tr></table></figure></p>
-<p>如果你是申请的第三方证书，恭喜你，改改域名就可以了。如果是自建证书，那么你还要继续。</p>
-<h3 id="2-代码适配"><a href="#2-代码适配" class="headerlink" title="2 . 代码适配"></a>2 . 代码适配</h3><p>自建证书，那么要辛苦一点，把下载下来的.cer证书拖进工程里面，然后配置一下，以AFN为例：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSString</span> *cerPath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"serve"</span> ofType:<span class="string">@"cer"</span>];</div><div class="line"><span class="built_in">NSData</span> *cerData = [<span class="built_in">NSData</span> dataWithContentsOfFile:cerPath];</div><div class="line"><span class="built_in">NSSet</span> *cerSet = [<span class="built_in">NSSet</span> setWithObjects:cerData, <span class="literal">nil</span>];</div><div class="line">AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];</div><div class="line">securityPolicy.allowInvalidCertificates = <span class="literal">NO</span>; <span class="comment">// 如果需要验证自建证书，需要设置为YES</span></div><div class="line">securityPolicy.validatesDomainName = <span class="literal">NO</span>; <span class="comment">// 是否需要验证域名，默认为YES</span></div><div class="line"><span class="comment">// 添加证书 [securityPolicy setPinnedCertificates:cerSet]; </span></div><div class="line">AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init]; manager.securityPolicy = securityPolicy;</div></pre></td></tr></table></figure></p>
-<p>关于<code>AFSSLPinningMode</code>这个属性，有三个选项：</p>
-<ul>
-<li><code>AFSSLPinningModeNone</code>：完全信任服务器返回的证书，默认选项，选了这个你托证书进来也没啥意义了</li>
-<li><code>AFSSLPinningModePublicKey</code>：对比你本地的证书和服务器返回的证书是否完全一样</li>
-<li><code>AFSSLPinningModeCertificate</code> ：对比你本地的证书和服务器返回的证书的public key是否一样。</li>
-</ul>
-<p>选哪种模式好呢？</p>
-<ul>
-<li><code>AFSSLPinningModeCertificate</code>：比较安全，但是也比较麻烦，你的证书过期了，那么你就要出一个新版本的app并且旧版本的就不能用了，当然你也可以每次启动时来通过一个接口来查询是否有新的证书。</li>
-<li><code>AFSSLPinningModePublicKey</code>：只对比public key，即使服务器的证书变了，只要public key不变，一样可以通过验证<br>所以，如果你确保每个使用者都是使用的最新的app，就用<code>AFSSLPinningModeCertificate</code>，不是的话，选择<code>AFSSLPinningModePublicKey</code>比较好。<h2 id="https抓包"><a href="#https抓包" class="headerlink" title="https抓包"></a>https抓包</h2>用Charles抓包在开发中是很方便的，尤其在跟后台的同学交流过程中起到比较重要的作用。但是在完成https之后，我们再抓包，发现抓到一堆乱码，是不是很坑爹，没事，接下来我们就解决它。<h3 id="1-Charles设置"><a href="#1-Charles设置" class="headerlink" title="1 . Charles设置"></a>1 . Charles设置</h3>首先现去下载最新版的Charles，因为我用旧版没成功（估计是我没重启/斜眼笑），官网和网上的破解版都可以。<br><img src="http://upload-images.jianshu.io/upload_images/888877-a74cbcc70418509e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Charles设置1"><br>给模拟器和系统安装这两个证书，打开钥匙串，设置证书为始终信<br><img src="http://upload-images.jianshu.io/upload_images/888877-21ffecea75a19644.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="证书设置信任"><br>在Charles里添加端口号443<br><img src="http://upload-images.jianshu.io/upload_images/888877-f15048b60172b6d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置的端口号"><br><strong>重启模拟器</strong>（重要的一步），然后就可以抓包了，如果还不行，重启电脑。<h3 id="2-手机设置"><a href="#2-手机设置" class="headerlink" title="2 . 手机设置"></a>2 . 手机设置</h3>先用手机设置代理连上Charles，然后用Sarfari打开<code>http://charlesproxy.com/getssl</code>这个网址，然后手机会自动下载安装证书，安装成功后，就可以在真机上抓包了。<blockquote>
-<p>还有一些白名单设置，因为政策还没出，所以那些就以后再补充了</p>
-</blockquote>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://smxNote.com/child/2016/11/09/第一篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="子书不言">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="子书不言">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/11/13/https适配及抓包/" rel="next" title="iOS的https适配及抓包">
+                <i class="fa fa-chevron-left"></i> iOS的https适配及抓包
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/11/09/第一篇/" itemprop="url">
-                  第一篇
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-09T00:00:00+08:00">
-                2016-11-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/09/第一篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/第一篇/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <hr>
-<h1 id="小目标"><a href="#小目标" class="headerlink" title="小目标"></a>小目标</h1><p>花了一个小时终于把自己的博客部署成功了，小目标完成一个。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">小目标序号</th>
-<th style="text-align:center">内容</th>
-<th style="text-align:center">时间</th>
-<th style="text-align:center">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">小目标一号</td>
-<td style="text-align:center">搭建一个博客</td>
-<td style="text-align:center">2017.03.09</td>
-<td style="text-align:center">懒癌啊</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -746,6 +486,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/08/01/iOS集成激励视频/"
+           data-title="iOS集成激励视频" data-url="http://smxNote.com/child/2017/08/01/iOS集成激励视频/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -765,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -819,6 +576,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌激励视频"><span class="nav-number">1.</span> <span class="nav-text">谷歌激励视频</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-集成SDK"><span class="nav-number">1.1.</span> <span class="nav-text">1 . 集成SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-初始化"><span class="nav-number">1.2.</span> <span class="nav-text">2 . 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-预加载视频"><span class="nav-number">1.3.</span> <span class="nav-text">3 . 预加载视频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-播放视频"><span class="nav-number">1.4.</span> <span class="nav-text">4 . 播放视频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-视频代理方法"><span class="nav-number">1.5.</span> <span class="nav-text">5 . 视频代理方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-实现连续播放"><span class="nav-number">1.6.</span> <span class="nav-text">6 . 实现连续播放</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vungle激励视频"><span class="nav-number">2.</span> <span class="nav-text">Vungle激励视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-初始化"><span class="nav-number">3.</span> <span class="nav-text">1 . 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-预加载视频"><span class="nav-number">4.</span> <span class="nav-text">2 . 预加载视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-播放视频"><span class="nav-number">5.</span> <span class="nav-text">3 . 播放视频</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -931,6 +704,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

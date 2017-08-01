@@ -404,7 +404,10 @@
 <li>正常网络环境下，大概6S即可播放<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[VungleSDK sharedSDK] loadPlacementWithID:kVungleTestPlacementID02 error:<span class="literal">nil</span>];</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="播放视频-1"><a href="#播放视频-1" class="headerlink" title="播放视频"></a>播放视频</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([[VungleSDK sharedSDK] isAdCachedForPlacementID:广告位ID]) &#123;</div><div class="line">[[VungleSDK sharedSDK] playAd:<span class="keyword">self</span> options:<span class="literal">nil</span> placementID:kVungleTestPlacementID02 error:<span class="literal">nil</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="播放视频-1"><a href="#播放视频-1" class="headerlink" title="播放视频"></a>播放视频</h3><ul>
+<li>可以通过<code>[[VungleSDK sharedSDK] isAdCachedForPlacementID:广告位ID]</code>判断是否可以播放的换成<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[VungleSDK sharedSDK] playAd:<span class="keyword">self</span> options:<span class="literal">nil</span> placementID:广告位ID error:<span class="literal">nil</span>];</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>关于更深入的定制，这里因为业务需要并没有进行深入设置，如果有时间，以后会补上。</p>
 
           
